@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+{% load static %} 
+
+<html> 
+<head> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>Contacts</title> 
+</head>
+
+<h2>Contacts</h2>
+<body>
+
+{% if contacts %}
+	
+		{% for contact in contacts %}
+			<a href = "/detail"/{% contact.id %}>{{ contact.name }}</a><br />
+
+		{% endfor %}
+{% else %}
+		<p>No Contacts added yet </p>
+{% endif %}
+
+</body>
+</html>

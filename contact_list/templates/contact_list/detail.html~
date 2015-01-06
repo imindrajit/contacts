@@ -1,0 +1,18 @@
+<!DOCTYPE html> 
+{% load static %} 
+
+<html>
+<head> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>Contact Details</title> 
+</head>
+
+<h2>{{ contact.name }}</h2>
+<p><b>Phone : </b> {{ contact.phone_number }}</p>
+<p><b>Email : </b> {{ contact.email }}</p>
+
+<p><a href="/edit/{{ contact.id }}">Edit</a></p>
+<p><a href="/delete/{{ contact.id }}">Delete</a></p>
+
+</body>
+</html>

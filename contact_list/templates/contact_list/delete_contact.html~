@@ -1,0 +1,21 @@
+<!DOCTYPE html> 
+{% load static %} 
+
+<html>
+<head> 
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>Delete Contact</title> 
+</head>
+
+<body>
+
+    <h2>Delete Contact</h2>
+    <p>Are you sure you want to delete {{ contact }}?</p>
+
+    <form action="/delete_contact/{{ contact.id }}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="Delete" />
+      <a href="/list/"><input type="button" value="Cancel" /></a>
+    </form>
+</body>
+</html>
